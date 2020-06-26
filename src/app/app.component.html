@@ -1,0 +1,9 @@
+<p>Click item header to expand</p>
+<div *ngFor="let item of items;let index = index" class="header" (click)="showSubItem(index)">
+	<p>{{item.name}}</p>
+	<div *ngIf="visibleIndex === index" class="subheader">
+		<span *ngFor="let subItem of item.items">
+      <p>{{subItem | titlecase}}</p>
+    </span>
+  </div>
+</div>
